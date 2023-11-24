@@ -1,44 +1,79 @@
-def processa_lista(valores):
-    pass
+def q1(pessoas ):
 
-def indice_menor(lista):
-    pass
+    idade = list(pessoas.values())
+    nome = list(pessoas.keys())
 
-def organizar_alturas(lista):
-    pass
+    indice = []
 
-def ler_valores():
-    pass
+    resultado = []
 
-def formatar_alturas(lista):
-    pass
-
-def intercalar_listas(lista1, lista2):
-    pass
-
-def lista_maior18(pessoas):
-    pass
-
-def q1(pessoas = {"Joao": 25, "Maria": 10}):
-    # resultado = lista_maior18(pessoas)
-    # return resultado
-
-def q2(lista1 = [1, 3, 5], lista2 = [2, 4, 6, 8, 10]):
-    # resultado_intercalado = intercalar_listas(lista1, lista2)
-    # return resultado_intercalado
-
-def q3(valores = None):
-    #valores = ler_valores()
-    # pares, impares = processa_lista(valores)
-    # return pares, impares
-
-def q4(valores = None):
-    #valores = ler_valores()
-    # lista_ambrosina = organizar_alturas(valores)
-    # return formatar_alturas(lista_ambrosina)
+    for index , i in enumerate(idade):
+        if(i > 18):
+            indice.append(index)
+            
+    for index , i in enumerate(pessoas):
+        if(index in indice):
+            resultado.append(nome[index])
+    resultado.sort()
+    return(resultado)
 
 
+def q2(lista1 , lista2):
+    lista = []
+    for i in lista1:
+        lista.append(i)
+    for i in lista2:
+        lista.append(i)
+    lista.sort()
+    return lista
 
+def q3(valores ):
+    pares = []
+    impares = []
+    for i in valores:
+        if(i % 2 == 0):
+            pares.append(i)
+    for i in valores:
+        if(i % 2 == 0):
+            impares.append(i)
+    tamanho_pares = len(pares)
+
+    while(tamanho_pares > 5):
+        tamanho_pares -= 1
+        pares.pop(0)
+        
+
+    return pares , impares
+
+def q4(lista):
+    resultado_string = []
+    lista.pop(-1)
+
+    maior = max(lista)
+    menor = min(lista)
+    meio_esquerdo = 0
+    meio_direito = 0
+
+    for index,i in enumerate(lista):
+        if(i == maior or i == menor):
+            lista.pop(index)
+        
+    if(lista[1] > lista[0]):
+        meio_esquerdo = lista[1]
+        meio_direito = lista[0]
+    else:
+        meio_esquerdo = lista[0]
+        meio_direito = lista[1]
+        
+
+    resultado = [menor ,  meio_esquerdo, maior , meio_direito  ]
+
+    for i in resultado:
+        string = float(i)
+    
+        resultado_string.append(f"{string:.2f}")
+
+    return(resultado_string)
 
 
 

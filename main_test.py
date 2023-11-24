@@ -1,6 +1,6 @@
 # Testes parametrizados corrigidos
 import pytest
-from solution import q1, q2, q3, q4
+from main import q1, q2, q3, q4
 
 
 @pytest.mark.parametrize("entrada, esperado", [
@@ -30,7 +30,7 @@ def test_q2(lista1, lista2, esperado):
     ([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 0], [22, 14, 16, 18, 20], []),
     ([2, 4, 6, 8, 10, 12, 1, 3, 5, 7, 9, 11, 0], [12, 4, 6, 8, 10], [11, 3, 5, 7, 9])
 ])
-def test_processa_lista(entrada, esperado_pares, esperado_impares):
+def q3(entrada, esperado_pares, esperado_impares):
     resultado_pares, resultado_impares = q3(entrada)
     assert resultado_pares == esperado_pares
     assert resultado_impares == esperado_impares
@@ -43,7 +43,7 @@ def test_processa_lista(entrada, esperado_pares, esperado_impares):
     ([1.65, 1.60, 1.58, 1.70, 0], ['1.58', '1.65', '1.70', '1.60']),
     # Adicione mais casos conforme necessário
 ])
-def test_q2(entrada, esperado):
+def test_q4(entrada, esperado):
     resultado = q4(entrada)
     assert resultado == esperado
 

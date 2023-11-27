@@ -30,7 +30,7 @@ def test_q2(lista1, lista2, esperado):
     ([2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 0], [22, 14, 16, 18, 20], []),
     ([2, 4, 6, 8, 10, 12, 1, 3, 5, 7, 9, 11, 0], [12, 4, 6, 8, 10], [11, 3, 5, 7, 9])
 ])
-def q3(entrada, esperado_pares, esperado_impares):
+def test_q3(entrada, esperado_pares, esperado_impares):
     resultado_pares, resultado_impares = q3(entrada)
     assert resultado_pares == esperado_pares
     assert resultado_impares == esperado_impares
